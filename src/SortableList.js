@@ -15,7 +15,10 @@ uniqueRowKey.id = 0
 
 export default class SortableList extends Component {
   static propTypes = {
-    data: PropTypes.object.isRequired,
+    data: PropTypes.oneOfType([
+          PropTypes.object.isRequired,
+          PropTypes.array.isRequired
+        ]),
     order: PropTypes.arrayOf(PropTypes.any),
     style: ViewPropTypes.style,
     contentContainerStyle: ViewPropTypes.style,
